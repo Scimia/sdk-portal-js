@@ -33,5 +33,5 @@ jobs:
         run: | 
           gh pr checkout ${{ github.event.pull_request.number }}
           git add src
-          git commit "Update SDK based on openapi.yaml changes"
+          git commit -m "Update SDK based on openapi.yaml changes"
           git push
