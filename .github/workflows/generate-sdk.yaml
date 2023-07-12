@@ -28,6 +28,8 @@ jobs:
       - name: Commit SDK changes to the PR
         shell: bash
         working-directory: ${{ github.workspace }}/actions
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: | 
           gh pr checkout ${{ github.event.pull_request.number }}
           git add src
