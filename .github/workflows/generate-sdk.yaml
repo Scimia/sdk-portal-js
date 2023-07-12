@@ -30,7 +30,9 @@ jobs:
         working-directory: ${{ github.workspace }}/actions
         env:
           GH_TOKEN: ${{ github.token }}
-        run: | 
+        run: |
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           gh pr checkout ${{ github.event.pull_request.number }}
           git add src
           git commit -m "Update SDK based on openapi.yaml changes"
