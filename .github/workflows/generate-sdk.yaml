@@ -9,6 +9,7 @@ permissions:
   contents: write
 jobs:
   generate-js:
+    timeout-minutes: ${{ fromJSON(vars.GHA_DEFAULT_TIMEOUT) }}
     name: Generate JavaScript SDK
     runs-on: ubuntu-latest
     steps:
